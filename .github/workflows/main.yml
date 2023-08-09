@@ -1,0 +1,19 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main  # Adjust this if your default branch is different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Build and Deploy
+      run: |
+        echo "Building and deploying the HTML project!"
+        # Any build or deployment steps you might have go here
