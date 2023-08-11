@@ -1,24 +1,24 @@
-name: CI/CD Workflow
+name: Your Workflow Name
 
 on:
   push:
     branches:
-      - main  # Adjust this if your default branch is different
+      - main # Adjust the branch as needed
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       
-    - name: Use Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
       
-    - name: Build and Deploy
-      run: |
-        echo "Building and deploying the HTML project!"
-        # Any build or deployment steps you might have go here
+      - name: Install dependencies
+        run: npm install
+      
+      # Add more steps as needed for your workflow
