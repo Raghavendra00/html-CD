@@ -1,6 +1,10 @@
-name: Node.js Workflow
 
-on: [push]
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main  # Adjust this if your default branch is different
 
 jobs:
   build:
@@ -9,13 +13,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-        ref: main
-      shell: bash
-      
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.x
 
-    # Continue with the rest of your build steps...
+    - name: Build and Deploy
+      run: |
+        echo "Building and deploying the HTML project!"
+        # Any build or deployment steps you might have go here
